@@ -13,7 +13,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     private var tableView : UITableView!
     
-    private let stringsArray : [String] = ["primera", "segunda", "tercera"]
+    private let stringsArray : [String] = ["First", "Second", "Third"]
+    
+    let cellIdentifier : String = "myCell"
     
     override func loadView() {
         
@@ -29,13 +31,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView!.delegate = self
+        tableView!.dataSource = self
+        tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
     }
 
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        let sections = 2
         
-        return sections
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,11 +49,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let cellIdentifier = "myCell"
+        var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as? UITableViewCell
         
-        return cell
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: cellIdentifier)
+        }
+        
+        cell!.textLabel?.text = stringsArray[indexPath.row]
+        
+        return cell!
     }
    
 }
