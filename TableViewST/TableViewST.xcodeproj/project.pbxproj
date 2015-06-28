@@ -412,6 +412,7 @@
 				F39656C31B3E9C52006C0FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F39656C41B3E9C52006C0FCB /* Build configuration list for PBXNativeTarget "TableViewSTTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				F39656C61B3E9C52006C0FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
