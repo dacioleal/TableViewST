@@ -36,6 +36,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         //A comment for committing changes
+        //Comment added
         
     }
 
